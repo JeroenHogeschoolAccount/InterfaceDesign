@@ -1,0 +1,838 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/*******************************************************************ALGEMEEN**********************************************************************************************************************/
+html {
+    height: 100%;
+}
+
+header h1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Prompt', sans-serif;
+    color: white;
+    font-size: 7vh;
+    font-size: 3.3em;
+    font-weight: 600;
+    backdrop-filter: blur(40px);
+    /*    color: rgba(255,255,255, 0.6);*/
+}
+
+header p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    color: white;
+    font-family: 'Prompt', sans-serif;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+body {
+    background: #94b4ff;
+    background-color: #1c1c1c;
+    background-color: #8ab7ff;
+    background-color: #f5fbfc;
+    background-color: #f5fcff;
+    background-color: #94adff;
+    background-color: #f58e87;
+    background-color: white;
+    background-image: linear-gradient(to right bottom, #d560ff, #ff42be, #ff6377, #ff9e36, #ffd300);
+    background: linear-gradient(to right, #12c2e8, #c471ed, #f64f58);
+    /*    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);*/
+    /*        background-image: linear-gradient(to top, #b224ef 0%, #7579ff 100%);*/
+    /*    background-image: linear-gradient(to right top, #ff00f4, #da00f3, #b100f1, #8000ef, #3812eb);*/
+    background-image: linear-gradient(to right top, #7a00ff, #a200f5, #c000eb, #d800e1, #eb12d8);
+    background-image: linear-gradient(to left top, #a2e2ff, #74caff, #7ea9ff, #b579ff, #eb12cf);
+    background-image: linear-gradient(to left top, #645dff, #9252f7, #b644ec, #d331df, #eb12cf);
+    /*    background-image: linear-gradient(to right bottom, #ff57e2, #fb62dd, #f76bd8, #f374d3, #ee7ccf, #df8ce4, #cd9bf4, #bba9ff, #86c3ff, #48daff, #27edff, #5ffbf1);*/
+    /*    background-image: linear-gradient(to right bottom, #e233ff, #ff6b00);*/
+    background-image: var(--achtergrond);
+    background-attachment: fixed;
+}
+
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    text-align: center;
+    color: black;
+    color: var(--footerTekstKleur);
+    opacity: 100%;
+    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.56);
+    background: var(--button);
+    box-shadow: 0 8px 32px 0 rgba(35, 35, 130, 0.1);
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
+    border: 1px solid rgba(255, 255, 255, .1);
+}
+
+
+
+
+/*******************************************************************KNOPPEN********************************************************************************************8**************************/
+.containerButton {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    padding: 25px 88px;
+    margin: 25px;
+    border: none;
+    border-radius: 50%;
+    background: none;
+}
+
+.button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(254, 254, 254, .07);
+    background: var(--button);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .2);
+    border: 0.5px outset rgba(255, 255, 255, 0.3);
+    border-radius: 60px;
+    backdrop-filter: blur(15px);
+    color: white;
+    letter-spacing: 0.9px;
+    text-decoration: none;
+    overflow: hidden;
+    text-transform: uppercase;
+    transition: all .35s ease-in-out;
+    z-index: 1;
+}
+
+#groen {
+    background: rgba(255, 255, 255, .7);
+    cursor: default;
+}
+
+/*
+.button:hover a {
+    letter-spacing: 2px;
+}
+*/
+
+.button a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, .14), transparent);
+    transform: skewX(41deg) translateX(0);
+    transition: all .5s ease;
+}
+
+.button:hover a::before {
+    transform: translateX(200%);
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 60px;
+    height: 13px;
+    transform: translateX(-50%);
+    transition: all .5s ease-in-out;
+    border-radius: 50%;
+}
+
+.button::before {
+    bottom: -5px;
+}
+
+.button:hover::before {
+    height: 50%;
+    height: 20%;
+    width: 70%;
+    border-radius: 35px;
+    transition-delay: .35s;
+}
+
+.button:nth-child(1)::before {
+    background: #12ff74;
+    box-shadow:
+        0 0 5px #12ff74,
+        0 0 15px #12ff74,
+        0 0 30px #12ff74,
+        0 0 60px #12ff74
+}
+
+.button:nth-child(2)::before {
+    background: #2bdfff;
+    box-shadow:
+        0 0 5px #2bdfff,
+        0 0 15px #2bdfff,
+        0 0 30px #2bdfff,
+        0 0 60px #2bdfff
+}
+
+.button:nth-child(3)::before {
+    background: #ff38f5;
+    box-shadow:
+        0 0 5px #ff38f5,
+        0 0 15px #ff38f5,
+        0 0 30px #ff38f5,
+        0 0 60px #ff38f5
+}
+
+.button:nth-child(3)::before {
+    background: #fff957;
+    box-shadow:
+        0 0 5px #fff957,
+        0 0 15px #fff957,
+        0 0 30px #fff957,
+        0 0 60px #fff957
+}
+
+.button:nth-child(4)::before {
+    background: #fff957;
+    box-shadow:
+        0 0 5px #fff957,
+        0 0 15px #fff957,
+        0 0 30px #fff957,
+        0 0 60px #fff957
+}
+
+
+
+
+.buttonGroen {
+    position: relative;
+    display: inline-block;
+    padding: 25px 88px;
+    margin: 25px;
+    border: none;
+    border-radius: 50%;
+    background: none;
+}
+
+.buttonGroen a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(254, 254, 254, .07);
+    background: var(--button);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .2);
+    border: 0.5px outset rgba(255, 255, 255, 0.3);
+    border-radius: 60px;
+    backdrop-filter: blur(15px);
+    color: white;
+    letter-spacing: 0.9px;
+    text-decoration: none;
+    overflow: hidden;
+    text-transform: uppercase;
+    transition: all .35s ease-in-out;
+    z-index: 1;
+    cursor: default;
+}
+
+.buttonGroen::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 60px;
+    height: 13px;
+    transform: translateX(-50%);
+    transition: all .5s ease-in-out;
+    border-radius: 50%;
+}
+
+.buttonGroen::before {
+    bottom: -5px;
+}
+
+.buttonGroen:nth-child(1)::before {
+    background: #12ff74;
+    box-shadow:
+        0 0 5px #12ff74,
+        0 0 15px #12ff74,
+        0 0 30px #12ff74,
+        0 0 60px #12ff74
+}
+
+
+
+
+/*******************************************************************BEWEGEND GLAS *********************************************************************************************************************************/
+.glas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.glas li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    background: rgba(254, 254, 254, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(35, 35, 130, 0.1);
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
+    border: 0.5px outset rgba(255, 255, 255, 0.3);
+    animation: glas 25s linear infinite;
+    bottom: -140px;
+    opacity: 0.66;
+}
+
+.glas li:nth-child(1) {
+    left: 5%;
+    width: 82px;
+    height: 82px;
+    animation-delay: 0s;
+}
+
+.glas li:nth-child(3) {
+    left: 70%;
+    width: 52px;
+    height: 52px;
+    animation-delay: 4.3s;
+}
+
+.glas li:nth-child(7) {
+    left: 35%;
+    width: 140px;
+    height: 140px;
+    animation-delay: 7.5s;
+}
+
+.glas li:nth-child(10) {
+    left: 85%;
+    width: 152px;
+    height: 152px;
+    animation-delay: 0s;
+    animation-duration: 12s;
+}
+
+@keyframes glas {
+
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(800deg);
+    }
+}
+
+
+
+
+/*******************************************************************UITLEG************************************************************************************************************************/
+#containerKaart {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    top: 2em;
+}
+
+.containerContentKaart {
+    position: absolute;
+    box-sizing: border-box;
+    height: 250px;
+    width: 700px;
+    padding: 0px 0 30px 20px;
+}
+
+.contentKaart {
+    font-family: 'Prompt', sans-serif;
+    color: white;
+}
+
+.contentKaart2 {
+    font-family: 'Prompt', sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* frosted glass effect */
+.kaart {
+    height: 350px;
+    width: 800px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    background: rgba(255, 255, 255, .4);
+    background: var(--achtergrondKaart);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px outset rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 1px 23px -1px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+}
+
+.kaart::after {
+    content: '';
+    position: absolute;
+    left: 100px;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, .14), transparent);
+    transform: skewX(41deg) translateX(0);
+    transition: all .5s ease;
+}
+
+
+
+
+/*******************************************************************MUIS EFFECT *********************************************************************************************************************************/
+.rondje {
+    position: absolute;
+    width: calc(var(--dotSize) * 1px);
+    height: calc(var(--dotSize) * 1px);
+    left: calc((var(--dotLeft) - var(--dotSize) / 2) * 1px);
+    top: calc((var(--dotTop) - var(--dotSize) / 2) * 1px);
+
+    background: linear-gradient(to right, #5433ff, #20bdff, #a5fecb);
+    background-image: linear-gradient(to right top, #2235ff, #0080ff, #00acff, #00cef6, #12ebd8);
+    background-image: linear-gradient(to right top, #ff5bf8, #e145f4, #bf31f1, #981fee, #6712eb);
+    animation: 0.6s rondjeAnimatie;
+    z-index: 0;
+    background: rgba(254, 254, 254, 0.1);
+    /*    box-shadow: 0 8px 32px 0 rgba(35, 35, 130, 0.1);*/
+    backdrop-filter: blur(20px);
+}
+
+@keyframes rondjeAnimatie {
+    0% {
+        opacity: 1;
+        transform: scale(1) rotate(calc(var(--dotAngle) * 1deg));
+    }
+
+    75% {
+        transform: scale(1) rotate(calc(var(--dotAngle) * 3deg));
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(calc(var(--dotAngle) * 1deg));
+
+    }
+}
+
+
+
+/*******************************************************************SLIDER************************************************************************************************************************/
+/* Vormgeving slider nieuwe versie */
+.slider {
+    -webkit-appearance: none;
+    width: 20vw;
+    height: 2.5vw;
+    border-radius: 4vw;
+    background: rgba(254, 254, 254, .07);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .2);
+    border: 0.5px outset rgba(255, 255, 255, 0.3);
+}
+
+/* Vormgeving slider knop */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 5vw;
+    height: 5vw;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: .5s;
+
+    background: rgba(254, 254, 254, .6);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .2);
+    border: 0.5px outset rgba(255, 255, 255, 0.3);
+}
+
+/* Vormgeving slider knop ingedrukt */
+.slider::-webkit-slider-thumb:active {
+    -webkit-appearance: none;
+    width: 6vw;
+    height: 6vw;
+    background-color: #0081C4;
+}
+
+.ja {
+    position: absolute;
+    left: 3em;
+    top: 20em;
+
+}
+
+
+
+
+/*******************************************************************DONKER *********************************************************************************************************************************/
+.containerButton2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    z-index: 1000;
+
+
+    justify-content: flex-start;
+    left: 2em;
+    margin-top: 1.2em;
+}
+
+.deel1 {
+    height: 60em;
+    margin-top: 4em;
+    background-color: var(--primary-color);
+    /*
+    background-image: linear-gradient(to right top, #ffd26a, #ffa659, #ff7368, #ff398c, #eb12bc);
+    background-image: linear-gradient(to left top, #ffd26a, #ffa659, #ff7368, #ff398c, #eb12bc);
+*/
+    background-color: var(--primary-color);
+}
+
+#icon {
+    cursor: pointer;
+    background: transparent;
+}
+
+.lichtDonkerButton a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 5em;
+    height: 5em;
+    background: rgba(254, 254, 254, .07);
+    background: var(--button);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .2);
+    border: 0.5px outset rgba(255, 255, 255, 0.3);
+    border-radius: 60px;
+    backdrop-filter: blur(15px);
+    color: white;
+    letter-spacing: 0.9px;
+    letter-spacing: 0px;
+    text-decoration: none;
+    overflow: hidden;
+    text-transform: uppercase;
+    transition: all .35s ease-in-out;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.lichtDonkerButton a:hover {
+    letter-spacing: -0.5px;
+}
+
+.lichtDonkerButton::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 60px;
+    height: 13px;
+    transform: translateX(-50%);
+    transition: all .5s ease-in-out;
+    border-radius: 50%;
+}
+
+.lichtDonkerButton {
+    position: relative;
+    display: inline-block;
+    border: none;
+    border-radius: 50%;
+    background: none;
+}
+
+.lichtDonkerButton a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, .14), transparent);
+    transform: skewX(41deg) translateX(0);
+    transition: all .5s ease;
+}
+
+.lichtDonkerButton:hover a::before {
+    transform: translateX(200%);
+}
+
+
+:root {
+    --primary-color: gainsboro;
+    --button: rgba(254, 254, 254, .07);
+    --achtergrond: linear-gradient(to left top, #645dff, #9252f7, #b644ec, #d331df, #eb12cf);
+    ;
+    --achtergrondKaart: rgba(255, 255, 255, .4);
+    --footer: rgba(255, 255, 255, 0.56);
+    --footerTekstKleur: black;
+}
+
+.dark-theme {
+    --primary-color: #2B2C30;
+    --button: rgba(0, 0, 0, .2);
+    --achtergrond: linear-gradient(to right bottom, #a3009b, #9900ac, #8900c0, #6d00d5, #2e12eb);
+    --achtergrond: linear-gradient(to right bottom, #9c00e0, #7b02ca, #5b02b3, #3a019c, #110085);
+    ;
+    --achtergrondKaart: rgba(0, 0, 0, .4);
+    --footer: rgba(0, 0, 0, 0.56);
+    --footerTekstKleur: white;
+}
+
+
+
+
+/*******************************************************************SCORE*************************************************************************************************************************/
+#containerKaart2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    margin-top: 4em;
+}
+
+.containerContentKaart2 {
+    position: absolute;
+    box-sizing: border-box;
+    height: 250px;
+    width: 700px;
+    padding: 0px 0 30px 20px;
+    margin-top: -12em;
+}
+
+/* frosted glass effect */
+.kaart2 {
+    height: 550px;
+    width: 800px;
+    /*    border-radius: 30px;*/
+
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+    background: rgba(255, 255, 255, .4);
+    background: var(--achtergrondKaart);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px outset rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 1px 23px -1px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+}
+
+.p {
+    display: flex;
+    margin-bottom: 0.4em;
+    font-family: 'Prompt', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+}
+
+
+
+.container {
+    margin-top: 1.5em;
+    width: 650px;
+}
+
+.balk1Achtergrond {
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.26), 0 1px rgba(255, 255, 255, 0.085);
+    background: var(--primary-color);
+    background: #E6E6E5;
+    border-radius: 30px;
+    background: transparent;
+
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12.5px);
+    -webkit-backdrop-filter: blur(12.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.balk1Inhoud {
+    height: 20px;
+    transition: 0.4s linear;
+}
+
+.balk1Bewegen .balk1Inhoud {
+    width: 55%;
+    background-color: #FFC808;
+    animation: balkAnimatie1 10s infinite;
+    /*    background-image: linear-gradient(to right top, #bf47ff, #aa3afa, #942cf5, #7b1ff0, #5d12eb);*/
+    background-color: #8E2EFF;
+    border-radius: 30px;
+
+    box-shadow:
+        0 0 2.5px #8E2EFF,
+        0 0 3.5px #8E2EFF,
+        0 0 7.5px #8E2EFF,
+        0 0 10px #8E2EFF
+}
+
+@keyframes balkAnimatie1 {
+    0% {
+        width: 5%;
+        background-color: #8E2EFF;
+    }
+
+    60% {
+        width: 55%;
+        background-color: #8E2EFF;
+    }
+
+    100% {
+        width: 55%;
+        background-color: #8E2EFF;
+    }
+}
+
+.balk2Bewegen .balk1Inhoud {
+    width: 70%;
+    background-color: #FFC808;
+    animation: balkAnimatie2 10s infinite;
+    /*    background-image: linear-gradient(to right top, #bf47ff, #aa3afa, #942cf5, #7b1ff0, #5d12eb);*/
+    background-color: #FF00EF;
+    border-radius: 30px;
+    box-shadow:
+        0 0 2.5px #FF00EF,
+        0 0 3.5px #FF00EF,
+        0 0 7.5px #FF00EF,
+        0 0 10px #FF00EF
+}
+
+@keyframes balkAnimatie2 {
+    0% {
+        width: 5%;
+        /*        background-color: #FFC808;*/
+    }
+
+    60% {
+        width: 70%;
+        /*        background-color: #FFC808;*/
+    }
+
+    100% {
+        width: 70%;
+        /*        background-color: #FFC808;*/
+    }
+}
+
+.balk3Bewegen .balk1Inhoud {
+    width: 65%;
+    width: 85%;
+    background-color: #FFC808;
+    animation: balkAnimatie3 10s infinite;
+    /*    background-image: linear-gradient(to right top, #bf47ff, #aa3afa, #942cf5, #7b1ff0, #5d12eb);*/
+    background-color: #383DFF;
+    border-radius: 30px;
+    box-shadow:
+        0 0 2.5px #383DFF,
+        0 0 3.5px #383DFF,
+        0 0 7.5px #383DFF,
+        0 0 10px #383DFF;
+}
+
+@keyframes balkAnimatie3 {
+    0% {
+        width: 5%;
+        /*        background-color: #FFC808;*/
+    }
+
+    60% {
+        width: 65%;
+        width: 85%;
+        /*        background-color: #FFC808;*/
+    }
+
+    100% {
+        width: 85%;
+        width: 85%;
+        /*        background-color: #FFC808;*/
+    }
+}
+
+.balk4Bewegen .balk1Inhoud {
+    width: 40%;
+    background-color: #FFC808;
+    animation: balkAnimatie4 10s infinite;
+    /*    background-image: linear-gradient(to right top, #bf47ff, #aa3afa, #942cf5, #7b1ff0, #5d12eb);*/
+    background-color: #22FF75;
+    background-color: #FFC808;
+    border-radius: 30px;
+    border-radius: 30px;
+    box-shadow:
+        0 0 2.5px #FFC808,
+        0 0 3.5px #FFC808,
+        0 0 7.5px #FFC808,
+        0 0 10px #FFC808
+}
+
+@keyframes balkAnimatie4 {
+    0% {
+        width: 5%;
+        /*        background-color: #FFC808;*/
+    }
+
+    60% {
+        width: 40%;
+        /*        background-color: #FFC808;*/
+    }
+
+    100% {
+        width: 40%;
+        /*        background-color: #FFC808;*/
+    }
+}
+
+
+
+
+/*******************************************************************OORSPRONG*********************************************************************************************************************/
+#containerKaart3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+    top: 2em;
+    padding-bottom: 10em;
+}
+
+
+
+
+#ff7979
